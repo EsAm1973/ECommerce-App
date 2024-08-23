@@ -97,9 +97,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Icons.logout,
                       color: Colors.white,
                     ),
-                    title: const Text(
+                    title:  Text(
                       'Log Out',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(fontSize: 15.sp,color: Colors.white),
                     ),
                     onTap: () {
                       Navigator.of(context).pushAndRemoveUntil(

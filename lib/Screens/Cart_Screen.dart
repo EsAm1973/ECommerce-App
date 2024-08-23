@@ -224,8 +224,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 40,
+                       SizedBox(
+                        height: 30.h,
                       ),
                       SizedBox(
                         width: double.infinity,
