@@ -51,7 +51,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
               children: [
                 SizedBox(
                   height:
-                      350.h, // Set the fixed height for the cart products area
+                      370.h, // Set the fixed height for the cart products area
                   child: ListView.builder(
                     itemCount: cartProvider.cartProducts.length,
                     itemBuilder: (context, index) {
@@ -76,7 +76,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                           margin: const EdgeInsets.all(10),
                           child: Container(
                             alignment: Alignment.center,
-                            height: 90,
+                            height: 120.h,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.grey.shade800,
@@ -86,8 +86,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                               children: [
                                 // Image section
                                 Container(
-                                  width: 100,
-                                  height: 100,
+                                  width: 100.w,
+                                  height: 130.h,
                                   margin: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
@@ -95,7 +95,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                   ),
                                   child: CachedNetworkImage(
                                     imageUrl: product['image'],
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.fill,
                                     placeholder: (context, url) => const Center(
                                       child: CircularProgressIndicator(),
                                     ),
@@ -119,30 +119,30 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                           style: GoogleFonts.lato(
-                                            textStyle: const TextStyle(
+                                            textStyle:  TextStyle(
                                               color: Colors.white,
-                                              fontSize: 15,
+                                              fontSize: 14.sp,
                                               fontWeight: FontWeight.bold,
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(height: 5),
+                                         SizedBox(height: 5.h),
                                         Text(
                                           product['category'],
                                           style: GoogleFonts.lato(
-                                            textStyle: const TextStyle(
+                                            textStyle: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 13,
+                                              fontSize: 12.sp,
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(height: 5),
+                                         SizedBox(height: 5.h),
                                         Text(
                                           '\$${product['price']}',
                                           style: GoogleFonts.lato(
-                                            textStyle: const TextStyle(
+                                            textStyle: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 13,
+                                              fontSize: 12.sp,
                                             ),
                                           ),
                                         ),
@@ -170,9 +170,9 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     ),
                                     Text(
                                       '${product['quantity']}',
-                                      style: const TextStyle(
+                                      style:  TextStyle(
                                         color: Colors.white,
-                                        fontSize: 22,
+                                        fontSize: 16.sp,
                                       ),
                                     ),
                                     IconButton(
@@ -209,18 +209,18 @@ class _ShoppingCartState extends State<ShoppingCart> {
                         children: [
                           Text('Bag Total',
                               style: GoogleFonts.roboto(
-                                  textStyle: const TextStyle(
+                                  textStyle:  TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 30))),
+                                      fontSize:24.sp))),
                           Consumer<CartProvider>(
                             builder: (context, value, child) => Text(
                                 '\$${value.calculateTotalPrice().toStringAsFixed(2)}',
                                 style: GoogleFonts.roboto(
-                                    textStyle: const TextStyle(
+                                    textStyle: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 30))),
+                                        fontSize: 24.sp))),
                           ),
                         ],
                       ),
@@ -237,10 +237,10 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                   borderRadius: BorderRadius.circular(10),
                                 )),
                             onPressed: () {},
-                            child: const Text(
+                            child:  Text(
                               'Proceed To Checkout',
                               style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
+                                  fontSize: 18.sp, fontWeight: FontWeight.bold),
                             )),
                       ),
                     ],
