@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/Screens/Login_Screen.dart';
 import 'package:ecommerce_app/widgets/profile_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key, required this.username});
@@ -28,8 +29,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Center(
               child: Stack(
                 children: [
-                  const CircleAvatar(
-                    radius: 50,
+                  CircleAvatar(
+                    radius: 50.r,
                     backgroundImage: NetworkImage(
                         'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/user-profile-icon.png'),
                   ),
@@ -52,16 +53,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Text(
               widget.username,
-              style: const TextStyle(
-                fontSize: 20,
+              style: TextStyle(
+                fontSize: 17.sp,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Expanded(
               child: ListView(
                 children: [
@@ -90,7 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     title: 'Support',
                     onTap: () {},
                   ),
-                  const SizedBox(height: 20),
+                  SizedBox(height: 10.h),
                   ListTile(
                     leading: const Icon(
                       Icons.logout,

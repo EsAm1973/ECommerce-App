@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileItem extends StatelessWidget {
   final IconData icon;
@@ -24,11 +25,11 @@ class ProfileItem extends StatelessWidget {
       child: Row(
         children: [
           Icon(icon, color: Colors.white),
-          const SizedBox(width: 15),
+           SizedBox(width: 15.w),
           Expanded(
             child: Text(
               title,
-              style: const TextStyle(fontSize: 16, color: Colors.white),
+              style:  TextStyle(fontSize: 14.sp, color: Colors.white),
             ),
           ),
           IconButton(

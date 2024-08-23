@@ -3,6 +3,7 @@ import 'package:ecommerce_app/models/Product.dart';
 import 'package:ecommerce_app/provider/cart_provider.dart';
 import 'package:ecommerce_app/provider/favorite_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:rate/rate.dart';
@@ -110,9 +111,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                                         .red, // Background color of the notification badge
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 20,
-                                    minHeight: 20,
+                                  constraints: BoxConstraints(
+                                    minWidth: 10.w,
+                                    minHeight: 20.h,
                                   ),
                                   child: Text(
                                     '${cartProvider.cartProducts.length}',
@@ -164,12 +165,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 40,
                 ),
                 Container(
-                  width: 350,
-                  height: 350,
+                  width: 300.w,
+                  height: 250.h,
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(widget.product.image))),
@@ -179,7 +180,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
                   width: double.infinity,
-                  height: 300,
+                  height: 300.r,
                   decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(30),
@@ -190,24 +191,29 @@ class _ProductDetailsState extends State<ProductDetails> {
                         textAlign: TextAlign.center,
                         widget.product.title,
                         style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
+                            textStyle: TextStyle(
                           color: Colors.white,
-                          fontSize: 30,
+                          fontSize: 20.sp,
                         )),
                         maxLines: 1,
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 50,
                       ),
-                      Text(
-                        textAlign: TextAlign.start,
-                        widget.product.description,
-                        style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15,
-                        )),
-                        maxLines: 4,
+                      SizedBox(
+                        height: 100.h,
+                        child: SingleChildScrollView(
+                          child: Text(
+                            textAlign: TextAlign.start,
+                            widget.product.description,
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 12.sp,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                       const Spacer(),
                       Row(

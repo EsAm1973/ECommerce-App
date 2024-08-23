@@ -4,6 +4,7 @@ import 'package:ecommerce_app/models/Product.dart';
 import 'package:ecommerce_app/sevices/product_service.dart';
 import 'package:ecommerce_app/widgets/category_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
@@ -128,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                 'Discover the latest trends in fashion, cutting-edge electronics, and exquisite jewelry, all in one place!',
                 style: GoogleFonts.roboto(
                     textStyle:
-                        const TextStyle(color: Colors.white, fontSize: 22)),
+                         TextStyle(color: Colors.white, fontSize: 19.sp)),
               ),
               const SizedBox(
                 height: 20,
@@ -212,8 +213,8 @@ class _HomePageState extends State<HomePage> {
                                   //this to make a indecator loading while image load
                                   child: CachedNetworkImage(
                                     imageUrl: product.image,
-                                    width: 200,
-                                    height: 200,
+                                    width: 200.w,
+                                    height: 250.h,
                                     fit: BoxFit.cover,
                                     placeholder: (context, url) => const Center(
                                       child: CircularProgressIndicator(),
@@ -227,22 +228,24 @@ class _HomePageState extends State<HomePage> {
                                   right: 0,
                                   left: 0,
                                   child: Container(
+                                    
                                     padding: const EdgeInsets.only(left: 5),
                                     width: double.infinity,
-                                    height: 50,
+                                    height: 60.h,
                                     decoration: BoxDecoration(
                                       color: Colors.black.withOpacity(0.5),
                                     ),
                                     child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           product.title,
                                           style: GoogleFonts.roboto(
-                                              textStyle: const TextStyle(
+                                              textStyle:  TextStyle(
                                                   color: Colors.white,
-                                                  fontSize: 16,
+                                                  fontSize: 12.sp,
                                                   fontWeight: FontWeight.bold)),
                                           maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
@@ -252,9 +255,9 @@ class _HomePageState extends State<HomePage> {
                                             Text(
                                               '${product.rating.rate}',
                                               style: GoogleFonts.roboto(
-                                                  textStyle: const TextStyle(
+                                                  textStyle:  TextStyle(
                                                       color: Colors.white,
-                                                      fontSize: 15)),
+                                                      fontSize: 10.sp)),
                                             ),
                                             const SizedBox(
                                               width: 5,

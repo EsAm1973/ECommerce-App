@@ -1,6 +1,9 @@
 import 'package:ecommerce_app/Screens/Login_Screen.dart';
 import 'package:ecommerce_app/sevices/user_service.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignScreen extends StatefulWidget {
@@ -93,9 +96,9 @@ class _SignScreenState extends State<SignScreen> {
                 Text(
                   'Sign up',
                   style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
+                      textStyle: TextStyle(
                           color: Colors.white,
-                          fontSize: 30,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.bold)),
                 ),
                 Form(
@@ -120,8 +123,8 @@ class _SignScreenState extends State<SignScreen> {
                               },
                             ),
                           ),
-                          const SizedBox(
-                            width: 15,
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width / 25,
                           ),
                           Expanded(
                             child: TextFormField(
@@ -208,8 +211,8 @@ class _SignScreenState extends State<SignScreen> {
                           return null;
                         },
                       ),
-                      const SizedBox(
-                        height: 30,
+                       SizedBox(
+                        height: MediaQuery.of(context).size.height/28,
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -222,10 +225,10 @@ class _SignScreenState extends State<SignScreen> {
                             ),
                           ),
                           onPressed: _signUp,
-                          child: const Text(
+                          child: Text(
                             'Sign up',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                                fontSize: 15.sp, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -236,14 +239,14 @@ class _SignScreenState extends State<SignScreen> {
                                 MaterialPageRoute(
                                     builder: (context) => const LoginScreen()));
                           },
-                          child: const Text(
+                          child: Text(
                             'Login',
                             style: TextStyle(
                                 decorationColor: Colors.white,
                                 decoration: TextDecoration.underline,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                                fontSize: 12.sp),
                           ),
                         ),
                       )

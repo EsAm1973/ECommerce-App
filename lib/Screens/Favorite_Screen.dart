@@ -4,6 +4,7 @@ import 'package:ecommerce_app/models/Product.dart';
 import 'package:ecommerce_app/models/Rating.dart';
 import 'package:ecommerce_app/provider/favorite_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:rate/rate.dart';
@@ -57,7 +58,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       margin: const EdgeInsets.all(10),
                       child: Container(
                         alignment: Alignment.center,
-                        height: 200,
+                        height: 170.h,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.grey.shade800,
@@ -67,8 +68,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           children: [
                             // Image section
                             Container(
-                              width: 150,
-                              height: 150,
+                              width: 120.w,
+                              height: 170.h,
                               margin: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -85,7 +86,8 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                     child: CircularProgressIndicator(),
                                   ),
                                   errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error, color: Colors.red),
+                                      const Icon(Icons.error,
+                                          color: Colors.red),
                                 ),
                               ),
                             ),
@@ -102,36 +104,36 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                       maxLines: 1,
                                       product['title'],
                                       style: GoogleFonts.lato(
-                                        textStyle: const TextStyle(
+                                        textStyle: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 18,
+                                          fontSize: 15.sp,
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(height: 5),
+                                    SizedBox(height: 5.h),
                                     Text(
                                       product['category'],
                                       style: GoogleFonts.lato(
-                                        textStyle: const TextStyle(
+                                        textStyle: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 13.sp,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(height: 5),
+                                    SizedBox(height: 5.h),
                                     Text(
                                       '\$${product['price']}',
                                       style: GoogleFonts.lato(
-                                        textStyle: const TextStyle(
+                                        textStyle: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 13.sp,
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(height: 5),
+                                    SizedBox(height: 5.h),
                                     Rate(
-                                      iconSize: 18,
+                                      iconSize: 15.sp,
                                       color: Colors.yellow.shade700,
                                       allowHalf: true,
                                       allowClear: true,

@@ -1,5 +1,6 @@
 // category_nav_bar.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryNavBar extends StatelessWidget {
   final Function(String) onCategorySelected;
@@ -26,8 +27,8 @@ class CategoryNavBar extends StatelessWidget {
           if (isSelected)
             Container(
               margin: EdgeInsets.only(top: 2),
-              height: 2,
-              width: 20,
+              height: 2.h,
+              width: 15.w,
               color: Colors.yellow,
             ),
         ],

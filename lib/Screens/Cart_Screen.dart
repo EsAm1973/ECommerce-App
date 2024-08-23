@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -49,7 +50,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
             return Column(
               children: [
                 SizedBox(
-                  height: 500, // Set the fixed height for the cart products area
+                  height:
+                      350.h, // Set the fixed height for the cart products area
                   child: ListView.builder(
                     itemCount: cartProvider.cartProducts.length,
                     itemBuilder: (context, index) {
@@ -109,7 +111,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Text(
                                           product['title'],
@@ -152,7 +155,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     IconButton(
                                       onPressed: () {
                                         if (product['quantity'] > 1) {
-                                          cartProvider.updateCartProductQuantity(
+                                          cartProvider
+                                              .updateCartProductQuantity(
                                             widget.username,
                                             product['title'],
                                             -1,
@@ -194,9 +198,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                     },
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                Spacer(),
                 // Bag Total Row
                 Padding(
                   padding: const EdgeInsets.all(15),

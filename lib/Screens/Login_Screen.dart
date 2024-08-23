@@ -3,6 +3,7 @@ import 'package:ecommerce_app/database/db_helper.dart';
 import 'package:ecommerce_app/sevices/auth_service.dart';
 import 'package:ecommerce_app/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -96,13 +97,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text(
                   'Login',
                   style: GoogleFonts.roboto(
-                      textStyle: const TextStyle(
+                      textStyle: TextStyle(
                           color: Colors.white,
-                          fontSize: 30,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.bold)),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 45,
                 ),
                 Form(
                     key: _formKey,
@@ -130,7 +131,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             return null;
                           },
                         ),
-                        const SizedBox(height: 20), // Added spacing
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 60,
+                        ),
                         TextFormField(
                           controller: _passwordController,
                           decoration: const InputDecoration(

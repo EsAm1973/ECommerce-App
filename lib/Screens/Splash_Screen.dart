@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/Screens/Login_Screen.dart';
 import 'package:ecommerce_app/Screens/Sign_Up_Screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Splash extends StatelessWidget {
@@ -31,13 +32,13 @@ class Splash extends StatelessWidget {
               Text(
                 'Discover the best deals and latest trends!',
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(color: Colors.white, fontSize: 35),
+                  textStyle: TextStyle(color: Colors.white, fontSize: 25.sp),
                 ),
               ),
               Text(
                 'Everything you love, delivered to your door.\nFast and secure checkout process.\nQuality products, right at your doorstep.',
                 style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(color: Colors.grey, fontSize: 15),
+                  textStyle:  TextStyle(color: Colors.grey, fontSize: 15.sp),
                 ),
               ),
               const SizedBox(
@@ -57,10 +58,10 @@ class Splash extends StatelessWidget {
                         ),
                         foregroundColor: Colors.black,
                         padding: const EdgeInsets.all(10)),
-                    child: const Text(
+                    child:  Text(
                       'GET STARTED',
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15.sp),
                     ),
                   )),
               const SizedBox(
